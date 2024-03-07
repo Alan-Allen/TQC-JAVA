@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		double input = 0;
+		try {
+		  input = sc.nextDouble();
+		  if (input<0 ) input = 0;
+			calCircle(input);
+		} catch (Exception e) {
+			System.out.print("0.0000");
+		}
+	}
+
+	public static void calCircle(double input) {
+		final double pi = Math.PI;
+        System.out.printf("%.4f", input * input * pi );
+	}
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class JPD03 {
+
+    public static void main(String[] args) {
+
+        int[] n = new int[5];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            if (sc.hasNextDouble()) {
+                n[i] = (int) Math.floor(sc.nextDouble());
+            } else {
+                sc.next();
+                n[i] = 0;
+            }
+        }
+        compute(n);
+    }
+
+    public static void compute(int[] n) {
+        int sum = 0, count = 0;
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] > 50) {
+                sum += n[i];
+                count++;
+            }
+        }
+        int average = count == 0 ? 0 : sum / count;
+        System.out.println(sum);
+        System.out.println(average);
+    }
+}

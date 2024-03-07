@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+
+		try {
+			double input = sc.nextDouble();
+			f(input);
+		} catch (Exception e) {
+			System.out.print("error");
+		}
+	}
+
+	public static void f(double num) {
+		double f = (2 * Math.pow(num, 3)) + (3 * num) - 1;
+		System.out.printf("%.4f", f);
+	}
+}

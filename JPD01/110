@@ -1,0 +1,26 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n1 = getValue(sc), n5 = getValue(sc), n10 = getValue(sc);
+		int sum = n1 + (n5 * 5) + (n10 * 10);
+		DecimalFormat formatter = new DecimalFormat("#,###");
+		System.out.print(formatter.format(sum));
+	}
+
+	public static int getValue(Scanner sc) {
+		int num;
+		try {
+			num = sc.nextInt();
+			if(num < 0) { num = 0; }
+			return num;
+		} catch(Exception e) {
+			sc.next();
+			return 0;
+		}
+	}
+}

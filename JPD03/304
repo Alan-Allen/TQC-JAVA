@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class JPD03 {
+
+	public static void main(String[] args) {
+
+		int[] scores = { 100, 100, 95, 95, 92, 91, 90, 100, 88, 88, 87, 87, 90, 91, 85, 80, 81, 82, 82, 89 };
+		int input = 0, a = 0;
+		double sum = 0;
+		Scanner sc = new Scanner(System.in);
+
+		try {
+			input = sc.nextInt();
+		} catch (Exception e) {
+			sc.next();
+		}
+
+		for(int i = 0; i < scores.length; i ++) {
+			if(scores[i] != input) {
+				sum += scores[i];
+        a++;
+			}
+		}
+
+    System.out.printf("%.2f", sum/a);
+	}
+}

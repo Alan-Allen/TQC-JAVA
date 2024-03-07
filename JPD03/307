@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class JPD03 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] inputArray = new String[1000];
+
+        int count = 0;
+        String input = sc.nextLine();
+        while (!input.equals("999")) {
+            inputArray[count] = input;
+            count++;
+            input = sc.nextLine();
+        }
+
+        String[] reversedArray = compute(inputArray, count);
+        System.out.print("before:");
+        for (int i = 0; i < count; i++) {
+            System.out.print(inputArray[i]);
+            if (i < count - 1) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+        System.out.print("after:");
+        for (int i = 0; i < count; i++) {
+            System.out.print(reversedArray[i]);
+            if (i < count - 1) {
+                System.out.print(" ");
+            }
+        }
+    }
+
+    public static String[] compute(String[] array, int count) {
+        String[] reversedArray = new String[count];
+        for (int i = 0; i < count; i++) {
+            reversedArray[i] = array[count - 1 - i];
+        }
+        return reversedArray;
+    }
+}

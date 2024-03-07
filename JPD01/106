@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n1 = getValue(sc), n2 = getValue(sc), n3 = getValue(sc), n4 = getValue(sc);
+
+        System.out.println("smallest:" + Math.min(Math.min(n1, n2), Math.min(n3, n4)));
+		System.out.print("largest:" + Math.max(Math.max(n1, n2), Math.max(n3, n4)));
+	}
+
+	public static int getValue(Scanner sc) {
+		int num;
+		try {
+			num = sc.nextInt();
+			if(num < 0) { num = 0; }
+			return num;
+		} catch(Exception e) {
+			sc.next();
+			return 0;
+		}
+	}
+}

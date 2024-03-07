@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class JPD02 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int i, j;
+
+        try {
+            int a = sc.nextInt(), b = sc.nextInt();
+            if (a <= 0 || b <= 0 || a > 100 || b > 100) {
+                throw new Exception();
+            }
+            for (i = a; i <= b; i++) {
+                for (j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        break;
+                    }
+                }
+                if (i == j) {
+                    System.out.println(i);
+                }
+            }
+        } catch (Exception e) {
+            System.out.print("error");
+            return;
+        }
+    }
+}

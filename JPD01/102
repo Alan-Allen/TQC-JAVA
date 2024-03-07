@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = getValue(sc);
+		int b = getValue(sc);
+		System.out.print(a+b);
+	}
+
+	public static int getValue(Scanner sc) {
+		int num;
+		try {
+			num = sc.nextInt();
+			if(num % 2 != 0) { num = 0; }
+            return num;
+		} catch(Exception e) {
+            sc.next();
+			return 0;
+		}
+	}
+}

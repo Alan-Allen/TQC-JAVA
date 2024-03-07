@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class JPD01 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		String input = sc.next();
+		sc.close();
+
+		char first = input.charAt(0), last = input.charAt(input.length() - 1);
+		
+		if (input.length() == 1) {
+          if (first == '0') {
+            System.out.print("1");
+            return;
+          } else if (Character.isLetterOrDigit(first) || Character.isDigit(first)) {
+            first = getNewChar(first);
+            System.out.print(first);
+          } else {
+            System.out.print("error");
+          }
+    } else if (input.length() > 1) {
+      char x = input.charAt(0);
+      if (Character.isLetterOrDigit(first) || Character.isDigit(first)) {
+        first = getNewChar(first);
+        System.out.print(first);
+      } else {
+        System.out.print("error");
+        return;
+      }
+      for (int i=1;i<input.length()-1;i++) {
+        char num2 = input.charAt(i);
+        System.out.print(num2);
+      }
+      if (Character.isLetterOrDigit(last) || Character.isDigit(last)) {
+        last = getNewChar(last);
+        System.out.print(last);
+      } else {
+        System.out.print("error");
+        return;
+      }
+    } else {
+      System.out.print("error");
+    }
+  }
+     private static char getNewChar(char c) {
+      if (Character.isDigit(c)) {
+        return (char) (((c - '0' + 1) % 10 + '0') % 10);
+      } else if (Character.isUpperCase(c)) {
+        return (char) ((c - 'A' + 1) % 26 + 'a');
+      } else if (Character.isLowerCase(c)) {
+        return (char) ((c - 'a' + 1) % 26 + 'A');
+      } else {
+        return c;
+      }
+  }
+	}

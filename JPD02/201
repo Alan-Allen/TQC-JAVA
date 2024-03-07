@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class JPD02 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String a = sc.next();
+		String b = sc.next();
+		
+		double n1 = abc(a);
+		double n2 = abc(b);
+		
+		if(n1==0.0) a="0";
+		if(n2==0.0) b="0";
+		
+		if(n1>n2)
+		  System.out.print(a + ">" + b);
+		if(n1<n2)
+		  System.out.print(a + "<" + b);
+		if(n1==n2)
+		  System.out.print(a + "=" + b);
+}
+	public static double abc(String num){
+    try {
+      return Double.valueOf(num);
+		} catch (Exception e) {
+			  return 0.0;
+		}
+
+	}
+}

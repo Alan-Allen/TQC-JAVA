@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class JPD02 {
+
+	public static void main(String args[]) {
+			Scanner sc = new Scanner(System.in);
+
+		try {
+			int input = sc.nextInt();
+			String k = "0";
+			if(input < 1 || input > 9) throw new Exception();
+			for(int i = 1; i <= input; i++) {
+				for (int j = i; j > 0; j--) {
+					if(i*j < 10) {
+						k = "0";
+					} else {
+						k = "";
+					}
+					System.out.printf("%d*%d=%s%d  ", i, j, k, i*j);
+				}
+				System.out.println();
+			}
+		} catch (Exception e) {
+			System.out.print("error");
+			return;
+		}
+	}
+}

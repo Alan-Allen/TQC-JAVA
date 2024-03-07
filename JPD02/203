@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class JPD02 {
+
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+		
+		String[] a = new String[3];
+		
+		for(int i = 0; i < 3; i++) {
+			a[i] = getValue(sc);
+		}
+
+		for(int i = 0; i < 3; i++) {
+			System.out.println(a[i]);
+		}
+	}
+
+	public static String getValue(Scanner sc) {
+		int num;
+        String s = "";
+		try {
+			num = sc.nextInt();
+			if(num > 100) s = "";
+			if(num >= 85 && num <= 100) s = "A";
+			if(num >= 60 && num < 85) s = "B";
+			if(num >= 0 && num < 60) s = "C";
+            return s;
+		} catch (Exception e) {
+			sc.next();
+			return "C";
+		}
+	}
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class JPD03 {
+
+	public static void main(String[] args) {
+		String[] weeks = {"Mon", "Tus", "Wed", "Thr", "Fri", "Sat", "Sun"};
+		try {
+			Scanner sc = new Scanner(System.in);
+			int input = sc.nextInt();
+			if(input < 0 || input > 6) throw new Exception();
+			System.out.print(weeks[input]);
+		} catch (Exception e) {
+			System.out.print("error");
+			return;
+		}
+	}
+}
